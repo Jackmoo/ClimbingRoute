@@ -1,10 +1,17 @@
 package com.JKM.climbingroutes;
 
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.os.AsyncTask;
 import android.view.View;
 
 public class DrawView extends View{
@@ -15,14 +22,40 @@ public class DrawView extends View{
 	}
 	@Override public void onDraw(Canvas canvas){
 		super.onDraw(canvas);
+		
 		//for test
 		Paint paint = new Paint();
+		//this.setAlpha(150);
+		
+		Bitmap bitmap = null;
+		Resources res=getResources(); 
+		//bitmap = BitmapFactory.decodeResource(res, R.drawable.ic_launcher);
+		
+			try {
+				bitmap = new BitmapGenerator("2","2",2).execute().get();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+		
+		
+		//this.drawCircle(canvas, 200, 100, (float)0.5, paint);
+		//this.drawTriangle(canvas, 200, 300, (float)0.5, paint);
+		//this.drawSquare(canvas, 200, 200, (float)0.5, paint);
+		
+		
+		canvas.drawBitmap(bitmap, 0, 0, null); 
+		//canvas.setBitmap(bitmap);
+		
 		this.setAlpha(150);
-		/*
+		
 		this.drawCircle(canvas, 200, 100, (float)0.5, paint);
 		this.drawTriangle(canvas, 200, 300, (float)0.5, paint);
 		this.drawSquare(canvas, 200, 200, (float)0.5, paint);
-		*/
+		
 		
 	}
 	

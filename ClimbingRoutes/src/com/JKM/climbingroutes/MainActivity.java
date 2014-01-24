@@ -15,12 +15,15 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		//setContentView(new DrawView(this));
-		//DrawView.drawCircle()
-		//DrawView.drawTriangle(canvas, 200, 300, (float)0.5, paint);
-		Button artificialButton = (Button)findViewById(R.id.artificialButton);
 		
+		//setContentView(R.layout.activity_main);
+		setContentView(new DrawView(this));
+		
+		//DrawView.drawCircle()	
+		//DrawView.drawTriangle(canvas, 200, 300, (float)0.5, paint);
+		//Button artificialButton = (Button)findViewById(R.id.artificialButton);
+		
+		/*
 		artificialButton.setOnClickListener(new OnClickListener(){
 			public void onClick(View v){
 				Intent transfer2gym = new Intent();
@@ -30,7 +33,7 @@ public class MainActivity extends Activity {
 			}
 			
 		});
-		
+		*/
 		
 	
 	}

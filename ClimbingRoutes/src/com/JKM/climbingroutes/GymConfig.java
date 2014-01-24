@@ -62,6 +62,13 @@ public class GymConfig {
 		map.put("gymName", "Y17");
 		map.put("img", R.drawable.ic_launcher);
 		list.add(map);
+		
+		map = new HashMap<String, Object>();
+		map.put("area", "北部");
+		map.put("gymName", "清大");
+		map.put("img", R.drawable.ic_launcher);
+		list.add(map);
+
 
 		map = new HashMap<String, Object>();
 		map.put("area", "中部");
